@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-…tu-hash…" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>ZTE Blade L130 | Clickea</title>
+  
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <h1>CLICKEA | ZTE Blade L130</h1>
+  </header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <img src="img/zte-blade-l130.webp" alt="ZTE Blade L130">
+  <div class="hero-content">
+    <h2>Un smartphone accesible y confiable</h2>
+    <p>El <strong>ZTE Blade L130</strong> combina practicidad, funcionalidad y precio justo. Perfecto para quienes buscan un celular sencillo y confiable para el día a día.</p>
+    <a href="#comprar" class="btn" id="openCheckout">¡Cómpralo ahora!</a>
+  </div>
+</section>
+
+<!-- ===== Modal Checkout ===== -->
+<div id="checkoutModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+
+    <!-- Banner -->
+    <div class="checkout-header">
+      <img src="img/Banner.png" alt="Banner">
+    </div>
+
+    <!-- Resumen del producto -->
+    <div class="product-summary">
+      <img src="img/zte-blade-l130.webp" alt="ZTE Blade" class="product-img">
+      <div class="product-info">
+        <h3 id="productoNombre">ZTE Blade L130</h3>
+        <p><strong id="productoPrecio">$199.900</strong></p>
+        <label>Color:</label>
+        <select id="productoColor">
+          <option>Negro</option>
+          <option>Azul</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Métodos de pago -->
+    <div class="payment-methods">
+      <p>Métodos de pago:</p>
+      <img src="img/visa.png" alt="Visa">
+      <img src="img/MasterCard_Logo.svg.png" alt="MasterCard">
+      <img src="img/nequi.jpg" alt="Nequi">
+    </div>
+
+    <!-- Formulario -->
+    <h3>Ingresa tus datos para confirmar el pedido</h3>
+    <form id="checkoutForm">
+      <div class="form-group">
+        <input type="text" id="nombre" placeholder="Nombre*" required>
+        <input type="text" id="apellido" placeholder="Apellido*" required>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" id="telefono" placeholder="WhatsApp*" required>
+        <input type="email" id="correo" placeholder="Correo electrónico*" required>
+      </div>
+
+      <div class="form-group">
+        <select id="departamento" required>
+          <option value="">Departamento*</option>
+          <option>Cundinamarca</option>
+        </select>
+        <input type="text" id="ciudad" placeholder="Ciudad*" required>
+      </div>
+
+      <input type="text" id="direccion" placeholder="Dirección*" required>
+
+      <label class="text">
+        <input type="text" id="detalles" placeholder="Detalles*" required> 
+        Te enviaremos un WhatsApp con los detalles del pedido.
+      </label>
+
+      <button type="submit" class="btn full-btn">✅ Confirmar Pedido - $199.900</button>
+      
+      <!-- Botón PSE -->
+      <button type="button" class="pse-btn" id="openPseModal">
+        <img src="img/pse.png" alt="PSE" style="height:22px;">
+        <span>Pagar con PSE</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== Modal Simulación PSE ===== -->
+<div id="pseModal" class="modal">
+  <div class="modal-content">
+    <span id="closePseModal" class="close">&times;</span>
+    <h2>Simulación de Pago PSE</h2>
+    <p>Selecciona tu banco para continuar:</p>
+    <select>
+      <option>Bancolombia</option>
+      <option>Davivienda</option>
+      <option>Banco de Bogotá</option>
+      <option>BBVA</option>
+    </select>
+    <br><br>
+    <button class="btn full-btn" onclick="simularPago()">✅ Simular Pago</button>
+  </div>
+</div>
+
+
+
+ <!-- Beneficios como Flip Cards con imágenes -->
+<section class="benefits">
+  <h3>¿Por qué elegir el ZTE Blade L130?</h3>
+  <div class="benefit-list">
+    
+    <div class="benefit-card">
+      <div class="card-front">
+        <img src="img/camara.png" alt="Precio accesible" class="card-img">
+        <h4>💰 Precio accesible</h4>
+      </div>
+      <div class="card-back">
+        Obtén un smartphone funcional sin gastar de más.
+      </div>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="card-front">
+        <img src="img/pantalla.jpg" alt="Pantalla práctica" class="card-img">
+        <h4>📱 Pantalla práctica</h4>
+      </div>
+      <div class="card-back">
+        Diseño compacto de 4 pulgadas, ideal para uso diario.
+      </div>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="card-front">
+        <img src="img/bat.webp" alt="Batería confiable" class="card-img">
+        <h4>🔋 Batería confiable</h4>
+      </div>
+      <div class="card-back">
+        Autonomía suficiente para mantenerte conectado.
+      </div>
+    </div>
+    
+    <div class="benefit-card">
+      <div class="card-front">
+        <img src="img/si camara.png" alt="Cámara funcional" class="card-img" >
+        <h4>📷 Cámara funcional</h4>
+      </div>
+      <div class="card-back">
+        Captura tus momentos con una cámara sencilla y práctica.
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+  <!-- Especificaciones -->
+<section class="specs" id="comprar">
+  <h3>⚙️ Especificaciones del ZTE Blade L130</h3>
+  
+  <div class="accordion">
+    <div class="accordion-item">
+      <button class="accordion-header">📱 Pantalla</button>
+      <div class="accordion-content">
+        <p>Pantalla compacta de 4.0 pulgadas, ideal para quienes buscan comodidad y practicidad.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">💾 Memoria interna</button>
+      <div class="accordion-content">
+        <p>Almacenamiento de 8GB expandible mediante tarjeta microSD, perfecto para tus apps y fotos.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">⚡ Memoria RAM</button>
+      <div class="accordion-content">
+        <p>Cuenta con 512MB de RAM, diseñado para un uso sencillo y aplicaciones básicas.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">📷 Cámara</button>
+      <div class="accordion-content">
+        <p>Cámara principal de 5MP para capturar tus momentos más importantes.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">🤖 Sistema Operativo</button>
+      <div class="accordion-content">
+        <p>Incluye Android Go, optimizado para equipos ligeros con buen rendimiento.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-header">🔋 Batería</button>
+      <div class="accordion-content">
+        <p>Batería de larga duración de 1400 mAh, suficiente para mantenerte conectado durante el día.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:1.5rem;">
+    <img src="img/Precio.jpg" alt="Precio del ZTE" style="max-width:150px; margin-bottom:1rem;">
+    <br>
+    <a href="#" class="btn">🛒 Comprar por $199.900</a>
+  </div>
+</section>
+
+    <div class="carousel">
+    <div class="carousel-track">
+      
+      <div class="carousel-slide">
+        <img src="img/categoria1.png" alt="Característica 1">
+        <div class="carousel-text">
+          <h3>Pensado para quienes más quieres</h3>
+          <p>Diseñado para abuelos y niños con interfaz sencilla y cámara práctica para mantener la comunicación en todo momento.</p>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="img/categoria2.png" alt="Característica 2">
+        <div class="carousel-text">
+          <h3>Tecnología de ZTE</h3>
+          <p>Respaldado por años de experiencia en dispositivos móviles, con un equilibrio entre precio y calidad.</p>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="img/categoria3.png" alt="Característica 3">
+        <div class="carousel-text">
+          <h3>Conectividad que importa</h3>
+          <p>Compatible con aplicaciones populares como WhatsApp, Facebook y YouTube, para estar siempre conectado.</p>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="img/categoria4.png" alt="Característica 4">
+        <div class="carousel-text">
+          <h3>Diseño que acompaña tu día a día</h3>
+          <p>Compacto, ligero y con diseño moderno, el ZTE Blade L130 es práctico para tu rutina diaria.</p>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="img/categoria5.png" alt="Característica 5">
+        <div class="carousel-text">
+          <h3>Tecnología accesible, rendimiento confiable</h3>
+          <p>Con un sistema operativo ágil y aplicaciones esenciales, ofrece una experiencia fluida para tu día a día.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
+
+  <!-- Reseñas de Clientes -->
+<section class="reviews">
+  <h3>⭐ Reseñas de Clientes</h3>
+
+  <!-- Resumen -->
+  <div class="review-summary">
+    <div class="average-rating">
+      <span class="rating-score">4.6</span>/5
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>Basado en 245 reseñas</p>
+    </div>
+    <div class="rating-bars">
+      <div class="bar"><span>5 ⭐</span><div class="progress" style="width:80%"></div></div>
+      <div class="bar"><span>4 ⭐</span><div class="progress" style="width:60%"></div></div>
+      <div class="bar"><span>3 ⭐</span><div class="progress" style="width:30%"></div></div>
+      <div class="bar"><span>2 ⭐</span><div class="progress" style="width:15%"></div></div>
+      <div class="bar"><span>1 ⭐</span><div class="progress" style="width:5%"></div></div>
+    </div>
+   <!-- Botón que abre el modal -->
+<button id="openReviewBtn" class="btn" onclick="modal-content">Escribir una reseña</button>
+  </div>
+
+  <!-- Fotos de clientes -->
+  <div class="customer-photos">
+    <h4>Fotos y videos de clientes</h4>
+    <div class="photo-grid">
+      <img src="img/fotocliente1.png" alt="Foto cliente">
+      <img src="img/fotocliente2.png" alt="Foto cliente">
+      <img src="img/fotocliente3.png" alt="Foto cliente">
+      <img src="img/fotocliente4.png" alt="Foto cliente">
+    </div>
+  </div>
+
+  <!-- Lista de reseñas -->
+<div class="review-list">
+  <div class="review-item">
+    <div class="review-header">
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span class="user">Marc C.</span>
+      <span class="date">hace 2 días</span>
+    </div>
+    <p>Por el precio me parece genial este móvil. Funciona muy bien para WhatsApp, Facebook e incluso algunas apps sencillas.</p>
+    <div class="review-photos">
+      <img src="img/fotocliente1.png" alt="Foto reseña">
+      <img src="img/fotocliente2.png" alt="Foto reseña">
+    </div>
+  </div>
+
+  <div class="review-item">
+    <div class="review-header">
+      <span class="stars">⭐⭐⭐⭐</span>
+      <span class="user">Laura M.</span>
+      <span class="date">hace 1 semana</span>
+    </div>
+    <p>Buen teléfono por el precio, cumple lo básico.</p>
+  </div>
+
+  <div class="review-item">
+    <div class="review-header">
+      <span class="stars">⭐⭐⭐</span>
+      <span class="user">Roberto F.</span>
+      <span class="date">hace 3 semanas</span>
+    </div>
+    <p>Es un móvil sencillo, para llamadas y mensajes está bien, pero no es tan rápido con apps más pesadas.</p>
+  </div>
+</div>
+
+
+<!-- Modal de reseña -->
+<div id="reviewModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Escribe tu reseña</h3>
+    
+    <!-- Estrellas -->
+    <div class="rating">
+      <span data-value="5">&#9733;</span>
+      <span data-value="4">&#9733;</span>
+      <span data-value="3">&#9733;</span>
+      <span data-value="2">&#9733;</span>
+      <span data-value="1">&#9733;</span>
+    </div>
+    
+    <!-- Formulario -->
+    <form id="reviewForm">
+      <label for="name">Tu nombre:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="comment">Tu reseña:</label>
+      <textarea id="comment" name="comment" required></textarea>
+
+      <label for="photos">Subir fotos (máx 3):</label>
+      <input type="file" id="photos" name="photos" accept="image/*" multiple>
+
+      <div id="preview" style="display:flex; gap:10px; margin-top:10px;"></div>
+
+      <button type="submit" class="btn">Enviar reseña</button>
+    </form>
+  </div>
+</div>
+</div>
+
+
+
+ <!-- Preguntas Frecuentes -->
+<section class="faq">
+  <h2>PREGUNTAS FRECUENTES</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h4>¿Qué tan buena es la batería?</h4>
+      <p>Su batería está diseñada para durar <strong>todo el día</strong> con uso básico como llamadas y mensajes.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿En cuánto tiempo llega?</h4>
+      <p>Después de hacer tu pedido, lo recibirás en <strong>3 a 7 días hábiles</strong> en Bogotá.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Este celular sirve para WhatsApp y llamadas?</h4>
+      <p><strong>Sí.</strong> El celular permite instalar WhatsApp, hacer llamadas y enviar mensajes sin problema.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+ 
+  <div class="footer-links">
+    <a href="#">Información de contacto</a>
+    <a href="#">Política de privacidad</a>
+    <a href="#">Política de reembolsos</a>
+    <a href="#">Política de envíos</a>
+    <a href="#">Términos del servicio</a>
+  </div>
+</footer>
+
+<<!-- ====== Botón flotante principal ====== -->
+<div class="floating-menu">
+  <button class="main-btn">+</button>
+  <div class="menu-options">
+    <a href="https://www.facebook.com/people/Clickea/61578884066051" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/clickea0" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@CLIKEA-k2e" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.tiktok.com/@clickea0?_t=ZS-8yicJUU2Gvp&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <button class="chat-btn">💬</button>
+  </div>
+</div>
+
+<!-- ====== Chatbot ====== -->
+<div class="chatbot" id="chatbot">
+  <div class="chat-header">💬 Chat de ayuda <span id="closeChat">✖</span></div>
+  <div class="chat-body" id="chatBody">
+    <p><b>Bot:</b> ¡Hola! ¿En qué puedo ayudarte?</p>
+  </div>
+  <div class="chat-footer">
+    <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+    <button id="sendBtn">Enviar</button>
+  </div>
+</div>
+
+<script src="compras.js"></script>
+<script src="app.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+
+
+<script>
+
+    
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-btn.next');
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    let currentIndex = 0;
+
+    function updateSlide() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlide();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlide();
+    });
+
+  const headers = document.querySelectorAll('.accordion-header');
+
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+
+      header.classList.toggle('active');
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        content.classList.remove("show");
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add("show");
+      }
+    });
+  });
+
+ // Elementos
+const modal = document.getElementById("reviewModal");
+const btn = document.getElementById("openReviewBtn");
+const closeBtn = document.querySelector(".close");
+const preview = document.getElementById("preview");
+let selectedRating = 0;
+
+// Abrir modal
+btn.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+// Cerrar modal al hacer clic en la X
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  document.getElementById("reviewForm").reset();
+  preview.innerHTML = "";
+});
+
+// Cerrar modal al hacer clic fuera
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    document.getElementById("reviewForm").reset();
+    preview.innerHTML = "";
+  }
+});
+
+// Manejo de estrellas
+const stars = document.querySelectorAll(".rating span");
+stars.forEach(star => {
+  star.addEventListener("click", () => {
+    stars.forEach(s => s.classList.remove("selected"));
+    star.classList.add("selected");
+    selectedRating = star.getAttribute("data-value");
+  });
+});
+
+// Previsualización de imágenes
+document.getElementById("photos").addEventListener("change", function() {
+  preview.innerHTML = "";
+  const files = Array.from(this.files).slice(0,3); // máx 3 imágenes
+  files.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = document.createElement("img");
+      img.src = e.target.result;
+      img.style.width = "80px";
+      img.style.height = "80px";
+      img.style.objectFit = "cover";
+      img.style.borderRadius = "8px";
+      preview.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  });
+});
+
+// Enviar reseña
+document.getElementById("reviewForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  
+  // Datos del formulario
+  const name = this.name.value;
+  const comment = this.comment.value;
+
+  // Crear nueva reseña dinámicamente
+  const reviewList = document.querySelector(".review-list");
+  const newReview = document.createElement("div");
+  newReview.classList.add("review-item");
+
+  // Crear sección de fotos
+  let photosHTML = "";
+  const files = Array.from(this.photos.files).slice(0,3);
+  if (files.length > 0) {
+    photosHTML = '<div class="review-photos">';
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.alt = "Foto reseña";
+        img.style.width = "100px";
+        img.style.height = "100px";
+        img.style.objectFit = "cover";
+        img.style.borderRadius = "8px";
+        newReview.querySelector(".review-photos").appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+    photosHTML += '</div>';
+  }
+
+  // Contenido de la reseña
+  newReview.innerHTML = `
+    <div class="review-header">
+      <span class="stars">${"⭐".repeat(selectedRating)}</span>
+      <span class="user">${name}</span>
+      <span class="date">ahora mismo</span>
+    </div>
+    <p>${comment}</p>
+    <div class="review-photos"></div>
+  `;
+
+  reviewList.prepend(newReview);
+
+  // Resetear formulario y cerrar modal
+  modal.style.display = "none";
+  this.reset();
+  stars.forEach(s => s.classList.remove("selected"));
+  preview.innerHTML = "";
+});
+
+
+// Mostrar/ocultar menú
+document.querySelector(".main-btn").addEventListener("click", function() {
+  document.querySelector(".floating-menu").classList.toggle("active");
+});
+
+// Abrir chatbot
+document.querySelector(".chat-btn").addEventListener("click", function() {
+  document.getElementById("chatbot").style.display = "flex";
+});
+
+// Cerrar chatbot
+document.getElementById("closeChat").addEventListener("click", function() {
+  document.getElementById("chatbot").style.display = "none";
+});
+
+// Chatbot funcional básico
+const sendBtn = document.getElementById("sendBtn");
+const chatInput = document.getElementById("chatInput");
+const chatBody = document.getElementById("chatBody");
+
+sendBtn.addEventListener("click", () => {
+  let userText = chatInput.value.trim();
+  if (userText !== "") {
+    chatBody.innerHTML += `<p><b>Tú:</b> ${userText}</p>`;
+    chatInput.value = "";
+
+    setTimeout(() => {
+      chatBody.innerHTML += `<p><b>Bot:</b> Gracias por tu mensaje, pronto te responderemos 😊</p>`;
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }, 1000);
+  }
+});
+
+
+</script>
+<script src="review.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

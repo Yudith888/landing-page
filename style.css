@@ -1,0 +1,1020 @@
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+    }
+
+    header {
+      background: #004AAD; /* Azul CLICKEA */
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+
+    .hero img {
+      max-width: 320px;
+      margin: 1rem;
+    }
+
+    .hero-content {
+      max-width: 500px;
+      margin: 1rem;
+    }
+
+    .hero-content h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #004AAD;
+    }
+
+    .hero-content p {
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #FFD600; /* Amarillo CLICKEA */
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #FFC107;
+    }
+
+    .benefits {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .benefits h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      color: #004AAD;
+    }
+
+    .benefit-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .benefit {
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+    }
+
+    .benefit h4 {
+      margin-bottom: 0.5rem;
+      color: #004AAD;
+    }
+
+    .specs {
+      background: #f1f1f1;
+      padding: 2rem;
+    }
+
+    .specs h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #004AAD;
+    }
+
+    .specs ul {
+      max-width: 600px;
+      margin: 0 auto;
+      list-style: none;
+      text-align: left;
+    }
+
+    .specs li {
+      margin-bottom: 0.6rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .specs li::before {
+      content: "✔";
+      color: #FFD600;
+      position: absolute;
+      left: 0;
+    }
+
+    footer {
+      background: #004AAD;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  
+    .benefit-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.benefit-card {
+  width: 200px;
+  height: 250px; /* un poco más alto para la imagen */
+  perspective: 1000px;
+  position: relative;
+}
+
+.benefit-card div {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.6s;
+  position: absolute;
+}
+
+.card-front {
+  background: #f0f0f0;
+  color: #333;
+  font-weight: bold;
+}
+
+.card-front .card-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.card-back {
+  background: #0077cc;
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 50px;
+}
+
+.benefit-card:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+.benefit-card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+
+    .carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .carousel-slide img {
+      max-width: 40%;
+      border-radius: 10px;
+    }
+
+    .carousel-text {
+      max-width: 55%;
+      padding: 10px;
+    }
+
+    .carousel-text h3 {
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+
+    .carousel-text p {
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* Botones */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .carousel-btn.prev {
+      left: 15px;
+    }
+
+    .carousel-btn.next {
+      right: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .carousel-slide {
+        flex-direction: column;
+        text-align: center;
+      }
+      .carousel-slide img {
+        max-width: 80%;
+        margin-bottom: 15px;
+      }
+      .carousel-text {
+        max-width: 100%;
+      }
+    }
+
+     .specs {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .specs h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0077cc;
+  }
+
+  .accordion {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .accordion-header {
+    width: 100%;
+    text-align: left;
+    background: linear-gradient(135deg, #0077cc, #00c6ff);
+    color: #fff;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+  }
+
+  .accordion-header:hover {
+    background: linear-gradient(135deg, #005fa3, #00a8e8);
+  }
+
+  .accordion-header::after {
+    content: "➕";
+    position: absolute;
+    right: 20px;
+    font-size: 18px;
+    transition: transform 0.3s;
+  }
+
+  .accordion-header.active::after {
+    content: "➖";
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background: #fff;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.5;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+  }
+
+  .accordion-content p {
+    margin: 15px 0;
+  }
+
+  .accordion-content.show {
+    padding: 15px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #0077cc;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .btn:hover {
+    background: #005fa3;
+    transform: scale(1.05);
+  }
+
+  .reviews {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.reviews h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.review-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.average-rating {
+  text-align: center;
+}
+
+.average-rating .rating-score {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0077cc;
+}
+
+.rating-bars {
+  flex: 1;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.bar span {
+  width: 50px;
+}
+
+.progress {
+  flex: 1;
+  height: 8px;
+  background: #ffc107;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.btn-review {
+  background: #000;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-review:hover {
+  background: #333;
+}
+
+.customer-photos {
+  margin-bottom: 25px;
+}
+
+.customer-photos h4 {
+  margin-bottom: 10px;
+}
+
+.photo-grid {
+  display: flex;
+  gap: 10px;
+}
+
+.photo-grid img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.review-item {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.review-header .stars {
+  color: #ffc107;
+  font-size: 18px;
+}
+
+.review-photos {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.review-photos img {
+  width: 100px;
+  border-radius: 8px;
+}
+
+/* Estilos básicos para modal */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  max-width: 90%;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.rating span {
+  font-size: 25px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+.rating span:hover,
+.rating span.selected {
+  color: gold;
+}
+.faq {
+  text-align: center;
+  padding: 40px 20px;
+}
+.faq h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.faq-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.faq-item {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.faq-item h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  border-top: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+.footer-top {
+  margin-bottom: 15px;
+}
+.footer .social-icons a {
+  font-size: 20px;
+  margin: 0 10px;
+  color: #000;
+  transition: color 0.3s;
+}
+.footer .social-icons a:hover {
+  color: #0077cc;
+}
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Botón flotante */
+.floating-menu {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.main-btn {
+  background: #0077cc;
+  color: white;
+  border: none;
+  font-size: 22px;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.menu-options {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.menu-options a, .menu-options button {
+  background: white;
+  color: #0077cc;
+  border: none;
+  margin: 5px 0;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.floating-menu.active .menu-options {
+  display: flex;
+}
+
+/* Chatbot */
+.chatbot {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 280px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+  display: none;
+  flex-direction: column;
+}
+.chat-header {
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-body {
+  padding: 10px;
+  flex: 1;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.chat-footer {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+.chat-footer input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+.chat-footer button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  width: 90%; max-width: 400px;
+  border-radius: 10px;
+}
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+.btn {
+  display: inline-block;
+  background: #00aaff;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Contenedor del modal */
+.modal-content {
+  background: #fff;
+  margin: 3% auto;
+  padding: 0;
+  width: 95%; 
+  max-width: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: slideUp 0.4s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Cabecera del modal */
+.modal-header {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 12px; right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.2s;
+}
+.close:hover {
+  color: #ffeb3b;
+}
+
+/* Cuerpo del formulario */
+.modal-body {
+  padding: 20px;
+}
+.modal-body label {
+  font-weight: 600;
+  margin: 10px 0 5px;
+  display: block;
+  color: #333;
+}
+.modal-body input, 
+.modal-body select, 
+.modal-body textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  transition: all 0.2s ease;
+}
+.modal-body input:focus, 
+.modal-body select:focus, 
+.modal-body textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.3);
+  outline: none;
+}
+
+/* Botón */
+.btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: linear-gradient(135deg, #0056b3, #0097cc);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Métodos de pago */
+.payment-methods {
+  text-align: center;
+  margin: 15px 0;
+}
+.payment-methods img {
+  height: 28px;
+  margin: 0 8px;
+  filter: grayscale(20%);
+  transition: 0.3s;
+}
+.payment-methods img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+@keyframes slideUp {
+  from {transform: translateY(40px); opacity:0;}
+  to {transform: translateY(0); opacity:1;}
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.modal-content {
+  background: #fff;
+  margin: 2% auto;
+  padding: 20px;
+  width: 95%; max-width: 450px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(-20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.checkout-header img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.product-img {
+  width: 80px;
+  border-radius: 8px;
+}
+
+.product-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.payment-methods {
+  text-align: center;
+  margin: 10px 0;
+}
+.payment-methods img {
+  width: 50px;
+  margin: 0 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.checkbox {
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  background: #00aaff;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover {
+  background: #0088cc;
+}
+
+.full-btn {
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+}
+.pse-btn {
+  background: #0033a0;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.pse-btn:hover {
+  background: #0055cc;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; 
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  overflow-y: auto; /* ✅ permite scroll dentro del modal */
+}
+
+.modal-content {
+  background: #fff;
+  margin: 40px auto; /* deja espacio arriba para no pegarse */
+  padding: 20px;
+  width: 90%; 
+  max-width: 450px;
+  border-radius: 12px;
+  position: relative;
+  max-height: 90vh; /* ✅ asegura que no sobrepase la pantalla */
+  overflow-y: auto; /* ✅ scroll interno */
+}
+
+.close {
+  position: absolute;
+  top: 10px; 
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+  /* Estilos simples para modal extra */
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.6);
+  }
+  .modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .close {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
